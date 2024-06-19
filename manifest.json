@@ -1,0 +1,38 @@
+{
+    "manifest_version": 3,
+    "name": "Search on Google",
+    "description": "Search selected text on Google",
+    "version": "1.0",
+    "permissions": [
+        "activeTab",
+        "contextMenus"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ],
+    "commands": {
+        "search_on_google": {
+            "suggested_key": {
+                "default": "Ctrl+G"
+            },
+            "description": "Search selected text on Google"
+        }
+    },
+    "action": {
+        "default_icon": {
+            "16": "icon.svg",
+            "48": "icon.svg",
+            "128": "icon.svg"
+        }
+    }
+}
