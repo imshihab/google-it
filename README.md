@@ -1,8 +1,10 @@
 # Search on Google Chrome Extension
 
+
 ## Overview
 
-This Chrome extension allows you to search for selected text on Google by pressing `Ctrl + G`. When text is selected on any webpage and you press `Ctrl + G`, a new tab will open with a Google search for the selected text.
+This Chrome extension allows you to search for selected text on Google or open the selected text as a URL by pressing `Ctrl + G`. When text is selected on any webpage and you press `Ctrl + G`, a new tab will open with a Google search for the selected text, or if the selected text is a URL, it will open that URL directly. URLs without a protocol will default to `https://`.
+
 
 ## Installation
 
@@ -11,12 +13,14 @@ This Chrome extension allows you to search for selected text on Google by pressi
 3. Enable "Developer mode" by toggling the switch in the top right corner.
 4. Click on "Load unpacked" and select the directory containing the extension files.
 
+
 ## Usage
 
 1. Navigate to any webpage.
-2. Select the text you want to search for on Google.
+2. Select the text you want to search for on Google or open as a URL.
 3. Press `Ctrl + G`.
-4. A new tab will open with a Google search for the selected text.
+4. A new tab will open with a Google search for the selected text, or if the selected text is a URL, it will open that URL directly. URLs without a protocol will default to `https://`.
+
 
 ## Notes
 
@@ -24,6 +28,7 @@ This Chrome extension allows you to search for selected text on Google by pressi
 - If no text is selected, pressing `Ctrl + G` will not perform any action.
 - This extension requires permissions to access the active tab and context menus.
 
+
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.b
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.

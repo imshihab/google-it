@@ -1,7 +1,17 @@
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === "search") {
-        const query = encodeURIComponent(request.text);
-        const url = `https://www.google.com/search?q=${query}`;
-        chrome.tabs.create({ url: url });
+    const { action, text } = request;
+    if (action === "visit") {
+        let formattedUrl;
+        if (text.startsWith("https://") || text.startsWith("http://")) {
+            formattedUrl = text;
+        } else {
+            formattedUrl = `https://${text}`;
+        }
+        chrome.tabs.create({ url: formattedUrl });
+    } else if (action === "search") {
+        const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+            text
+        )}`;
+        chrome.tabs.create({ url: searchUrl });
     }
 });
